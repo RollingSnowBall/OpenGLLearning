@@ -1,2 +1,4 @@
 C:\GAMETOOLS\opgl\opengl\Debug\opengl.exe
 C:\GAMETOOLS\opgl\opengl\Debug\opengl.pdb
+C:\GAMETOOLS\OpenGL\Debug\opengl.exe
+C:\GAMETOOLS\OpenGL\Debug\opengl.pdb
