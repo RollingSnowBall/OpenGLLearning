@@ -11,7 +11,7 @@ void init()
 
     //区域x的坐标值从0到200，y的坐标值从0到150
     //0,0为左下角，200，150为右上角
-    gluOrtho2D(0, 200, 0, 150);//
+    gluOrtho2D(0, 100, 0, 50);//
 }
 
 void DisplayCB(void)
@@ -22,16 +22,11 @@ void DisplayCB(void)
     glColor3f(1, 0, 0);//设置颜色
 
     //图元类型，begin和end之间必须有glVertex
-    glBegin(GL_LINES);
+    glBegin(GL_TRIANGLES);
 
-    //glVertex*(),*表示有后缀
-    //指明空间维数、坐标值变量数据类型和可能的向量形式坐标描述。
-    //坐标位置有2、3、4维
-    //4维就是齐次坐标，第四维是笛卡尔坐标值比例因子，方便矩阵变换
-    glVertex2i(180, 15);
-    //i整数；s短整数；f浮点数；d双精度浮点数
-    glVertex2i(10, 145);
-    //也可以写成 int point1[]={50,100}; glVertex2iv(point1);注意后面挂v
+    glVertex2i(0, 50);
+    glVertex2i(50, 0);
+    glVertex2i(100, 50);
 
     glEnd();
 
