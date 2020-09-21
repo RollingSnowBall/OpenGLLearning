@@ -20,13 +20,18 @@ void DisplayCB(void)
 
     //画线
     glColor3f(1, 0, 0);//设置颜色
-
-    //图元类型，begin和end之间必须有glVertex
-    glBegin(GL_TRIANGLES);
-
-    glVertex2i(0, 50);
-    glVertex2i(50, 0);
-    glVertex2i(100, 50);
+    //坐标点的集合
+    GLint pt[][2] = { {0,50},{50, 0},{100,50} };
+    //相对于上面的索引，这样如果坐标点集合很多，下面映射就可以减少
+    GLubyte vertIndex[] = { 0, 1, 2};
+    //设置顶点数组
+    glEnableClientState(GL_VERTEX_ARRAY);
+    //2：每个顶点有两个元素描述坐标
+    //0：连续顶点数据的偏移量，这样可以在坐标点里面加入别的元素例如颜色
+    glVertexPointer(2, GL_INT, 0, pt);
+    //3：有3个坐标点
+    //GL_UNSIGNED_BYTE索引的类型还可以是GL_UNSIGNED_SHORT GL_UNSIGNED_INT
+    glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_BYTE, vertIndex);
 
     glEnd();
 
